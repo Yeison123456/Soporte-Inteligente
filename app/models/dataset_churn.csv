@@ -1,0 +1,91 @@
+Descripcion_Caso,Antiguedad_Contrato,Volumen_Tickets_Ult_Mes,Segmento_Cliente,Churn_Score
+"el sistema se cayó y no funciona desde la mañana",3,12,C,88
+"necesitamos una nueva funcionalidad para reportes",18,4,A,22
+"error crítico en producción afectando a varios usuarios",2,20,C,95
+"deseamos agregar una mejora al módulo de facturación",24,3,B,28
+"el login falla de forma intermitente",4,7,B,65
+"solicitamos añadir una feature para automatizar tareas",30,2,A,15
+"la plataforma presenta un bug al cargar archivos",5,9,B,58
+"requerimos una mejora en el rendimiento",22,1,A,20
+"servicio caído urgente por favor revisar",1,18,C,98
+"queremos agregar un nuevo dashboard evolutivo",26,2,B,18
+"bug crítico al procesar pagos en línea",3,10,C,84
+"necesitamos mejorar el sistema de alertas",28,3,A,25
+"error urgente en la base de datos",2,16,C,92
+"solicitamos nueva API para integraciones",36,2,A,12
+"fallas constantes en el módulo de usuarios",6,8,B,60
+"requerimos mejoras en los reportes",14,3,B,30
+"problemas graves al iniciar sesión",3,14,C,80
+"queremos añadir una nueva función para clientes",20,1,A,18
+"falla crítica en servidores",2,19,C,94
+"necesitamos agregar nuevo formulario para análisis",26,4,A,22
+"el sistema está lento y a veces deja de funcionar",5,11,B,70
+"solicitamos mejoras visuales al dashboard",32,2,A,10
+"error 500 al consultar reportes",4,9,B,62
+"necesitamos más opciones en el módulo security",16,3,B,28
+"la aplicación se detiene por un error grave",3,13,C,88
+"deseamos agregar filtros avanzados",20,2,A,15
+"bug al descargar archivos",7,7,B,55
+"se cayó el servicio de autenticación",2,20,C,97
+"necesitamos ampliar funcionalidades del CRM",30,1,A,12
+"problemas críticos con el motor de búsqueda",4,15,C,90
+"requerimos una mejora en análisis predictivo",18,3,A,20
+"error urgente al procesar pedidos",3,12,C,85
+"queremos agregar módulo de estadísticas",24,2,B,25
+"falla en el servicio de notificaciones",6,8,B,63
+"solicitamos nueva integración con SAP",28,1,A,18
+"bug crítico en la generación de reportes",3,17,C,93
+"necesitamos mejorar el layout del portal",32,2,A,14
+"la plataforma muestra error al guardar",5,10,B,57
+"problemas urgentes con pasarela de pagos",2,18,C,96
+"queremos agregar formulario de auditoría",26,3,B,20
+"falla al actualizar información de usuarios",7,6,B,52
+"solicitamos nuevas funciones para automatización",20,2,A,16
+"error grave en proceso de importación",4,12,B,75
+"la app se cae de forma repetitiva",3,14,C,89
+"necesitamos nueva vista de seguimiento",22,3,A,20
+"bug al cargar métricas",6,7,B,54
+"servicio no disponible desde hace horas",2,19,C,95
+"solicitamos mejora en el flujo de pedidos",28,2,A,18
+"error crítico en módulo financiero",3,15,C,91
+"deseamos agregar panel avanzado",30,1,A,14
+"fallo grave en logs del sistema",4,12,C,79
+"queremos añadir funciones de exportación",24,2,B,22
+"problemas urgentes al sincronizar datos",2,17,C,93
+"necesitamos mejorar interfaz visual",32,1,A,10
+"la aplicación muestra errores al validar campos",5,8,B,60
+"bug crítico al ejecutar tareas programadas",3,16,C,90
+"solicitamos una nueva funcionalidad en inventarios",20,2,A,18
+"error urgente en módulo de ventas",3,14,C,88
+"deseamos agregar opciones nuevas al dashboard",26,2,B,20
+"falla en servicio de mensajería",6,9,B,58
+"solicitamos mejora avanzada en seguridad",18,3,A,22
+"problemas graves en autenticación",3,15,C,92
+"queremos agregar botón de exportar CSV",24,2,A,15
+"bug al visualizar gráficas",7,7,B,55
+"se cayó el servidor principal",2,20,C,97
+"necesitamos ampliar funcionalidades del portal",30,2,A,12
+"fallos críticos en workflows",3,16,C,90
+"queremos añadir módulo nuevo",22,2,A,18
+"errores frecuentes en operaciones",5,10,B,61
+"solicitamos mejora en búsquedas",28,2,B,20
+"error crítico al cargar usuarios",3,17,C,92
+"necesitamos mejorar panel administrativo",32,1,A,14
+"bug al procesar inventarios",7,7,B,56
+"fallo grave en servicios core",4,15,C,90
+"solicitamos nueva vista en analytics",20,1,A,16
+"error grave al eliminar registros",3,14,C,87
+"queremos añadir opciones de filtros",26,2,B,22
+"la plataforma presenta problemas graves",5,12,B,73
+"necesitamos mejorar rendimiento en consultas",18,3,A,20
+"error urgente en la API central",2,18,C,96
+"solicitamos agregar notificaciones push",24,2,A,18
+"bug crítico en autenticación",3,16,C,94
+"deseamos agregar módulo de análisis",30,1,A,12
+"fallo grave al generar informes",4,13,C,85
+"queremos añadir funcionalidad de exportación PDF",26,1,A,14
+"error al cargar archivos masivos",6,8,B,59
+"problemas urgentes en microservicios",2,19,C,95
+"solicitamos mejoras en rendimiento global",28,1,A,18
+"falla crítica en facturación",3,15,C,92
+"necesitamos una nueva función para clientes VIP",20,1,A,16
