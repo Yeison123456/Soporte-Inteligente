@@ -5,7 +5,9 @@ ENV/
 
 # Archivos de configuración de entorno
 .env
-.credentials
+.credentials.json
+.token.json
+
 
 # Archivos compilados de Python
 __pycache__/
