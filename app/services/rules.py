@@ -1,62 +1,102 @@
-def rule_engine(churn_score: int, sentiment: str):
+def rule_engine(churn_score: int, sentiment: float):
     """
-    Motor de reglas mejorado, basado en prácticas reales de Customer Success.
+    Motor de reglas mejorado con 6 niveles de riesgo.
     Devuelve un nivel de riesgo y recomendaciones accionables.
     """
 
-    # --- CRÍTICO ---
-    # Riesgo extremo: churn muy alto o sentimiento muy negativo + score alto
-    if churn_score >= 85 or (churn_score >= 70 and sentiment == "Negativo"):
+    # --- EMERGENCIA (95+) ---
+    if churn_score >= 95:
         return {
-            "level": "CRITICO",
+            "level": "EMERGENCIA",
             "message": (
-                "⚠ Riesgo extremo de pérdida. Acciones recomendadas:\n"
-                "- Contactar al cliente en menos de 1 hora.\n"
-                "- Escalar al Director de Cuenta.\n"
-                "- Ofrecer plan de retención (10–20% descuento, horas adicionales o upgrade temporal).\n"
-                "- Programar reunión estratégica en las próximas 24 horas.\n"
-                "- Enviar resumen ejecutivo del estado del servicio y medidas inmediatas.\n"
-                "- Priorizar TODOS los tickets del cliente como urgentes hasta estabilizar la relación."
+                "Riesgo de pérdida inminente. Acciones inmediatas:\n"
+                "Contactar al cliente por teléfono en menos de 30 minutos.\n"
+                "Escalar a VP/Director + asignar ingeniero dedicado 24/7.\n"
+                "Ofrecer compensación: 20-30% descuento o créditos de servicio.\n"
+                "Reunión presencial/virtual con stakeholders en máximo 12 horas.\n"
+                "Pausar facturación hasta resolver la situación crítica."
             )
         }
 
-    # --- ALTA ---
-    # Riesgo alto pero controlable
-    if churn_score >= 60:
+    # --- CRÍTICO (85-94) ---
+    if churn_score >= 85 or (churn_score >= 75 and sentiment < 0):
         return {
-            "level": "ALTA",
+            "level": "CRÍTICO",
             "message": (
-                "⚠ Riesgo alto. Acciones recomendadas:\n"
-                "- Asignar un ingeniero senior dedicado.\n"
-                "- Reducir tiempos de respuesta .\n"
-                "- Llamada de seguimiento cada 3–5 días.\n"
-                "- Validar satisfacción tras cada ticket cerrado.\n"
-                "- Ofrecer mejora sin costo (optimización/diagnóstico preventivo)."
+                "Riesgo extremo de pérdida. Acciones recomendadas:\n"
+                "Contactar al cliente en menos de 1 hora.\n"
+                "Escalar al Director de Cuenta + CSM Senior.\n"
+                "Ofrecer plan de retención (15-20% descuento o upgrade temporal gratuito).\n"
+                "Programar reunión estratégica en las próximas 24 horas.\n"
+                "Priorizar TODOS los tickets del cliente como urgentes."
             )
         }
 
-    # --- MEDIA ---
-    # Riesgo moderado por mal sentimiento aunque el score sea medio
-    if churn_score >= 40 or sentiment == "Negativo":
+    # --- ALTO (70-84) ---
+    if churn_score >= 70 or (churn_score >= 60 and sentiment < 0):
         return {
-            "level": "MEDIA",
+            "level": "ALTO",
             "message": (
-                "⚠ Riesgo moderado. Acciones sugeridas:\n"
-                "- Revisar historial de tickets para detectar patrones.\n"
-                "- Mejorar comunicación proactiva (correos de avance más frecuentes).\n"
-                "- Preguntar directamente por puntos de insatisfacción.\n"
-                "- Entregar recomendaciones preventivas personalizadas."
+                "Riesgo alto. Acciones recomendadas:\n"
+                "Asignar ingeniero senior dedicado.\n"
+                "Reducir SLA de respuesta a 4 horas máximo.\n"
+                "Llamada de seguimiento cada 3 días.\n"
+                "Validar satisfacción tras cada ticket cerrado.\n"
+                "Ofrecer diagnóstico técnico sin costo."
             )
         }
 
-    # --- NORMAL ---
+    # --- MEDIO-ALTO (50-69) ---
+    if churn_score >= 50:
+        return {
+            "level": "MEDIO-ALTO",
+            "message": (
+                "Riesgo considerable. Acciones sugeridas:\n"
+                "Llamada proactiva del CSM en las próximas 48 horas.\n"
+                "Revisar historial de tickets (últimos 90 días).\n"
+                "Mejorar comunicación: updates cada ticket sin esperar cierre.\n"
+                "Ofrecer capacitación específica sobre áreas problemáticas.\n"
+                "Programar check-in semanal durante el próximo mes."
+            )
+        }
+
+    # --- MEDIO (30-49) ---
+    if churn_score >= 30 or sentiment < 0:
+        return {
+            "level": "MEDIO",
+            "message": (
+                "Riesgo moderado. Acciones sugeridas:\n"
+                "Revisar historial de tickets para detectar patrones.\n"
+                "Email personalizado del CSM (no automatizado).\n"
+                "Preguntar directamente: '¿Qué podríamos mejorar?'.\n"
+                "Enviar best practices personalizadas.\n"
+                "Programar Quarterly Business Review (QBR)."
+            )
+        }
+
+    # --- BAJO (15-29) ---
+    if churn_score >= 15:
+        return {
+            "level": "BAJO",
+            "message": (
+                "Riesgo bajo. Acciones estándar:\n"
+                "Mantener monitoreo rutinario de métricas.\n"
+                "Responder tickets en SLA normal (12-24h).\n"
+                "Check-in trimestral estándar.\n"
+                "Enviar newsletter mensual con novedades.\n"
+                "Explorar oportunidades de upsell/cross-sell."
+            )
+        }
+
+    # --- ÓPTIMO (0-14) ---
     return {
-        "level": "NORMAL",
+        "level": "ÓPTIMO",
         "message": (
-            "✔ Riesgo bajo. Acciones estándar:\n"
-            "- Mantener monitoreo rutinario.\n"
-            "- Responder tickets en SLA normal.\n"
-            "- Ofrecer tips o buenas prácticas mensualmente.\n"
-            "- Realizar encuesta NPS ligera cada 90 días."
+            "Cliente saludable. Acciones de crecimiento:\n"
+            "Solicitar testimonial o caso de éxito.\n"
+            "Invitar a programa de referidos o customer advisory board.\n"
+            "Ofrecer acceso anticipado a nuevas funcionalidades.\n"
+            "Realizar encuesta NPS cada 120 días.\n"
+            "Celebrar renovaciones y expansiones del contrato."
         )
     }

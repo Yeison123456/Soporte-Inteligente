@@ -5,12 +5,12 @@ from datetime import datetime, timezone, timedelta
 import uuid
 import random
 
-from fastapi import BackgroundTasks
 from app.services.gmail.send import send_correo
 from app.schemas.schemas import TicketIn, TicketOut
 from app.models.models import Ticket, TicketHistory, User, Role
 from app.schemas.ticketStatusHistory import EstadoHistorialIn
 from app.database import get_db
+from sqlalchemy.orm import selectinload
 
 from app.services import phishing as phishing_svc
 from app.services import anonymizer as sensibilidad_svc
@@ -29,7 +29,8 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
 
     ticket_id = ticket.ID_Ticket or str(uuid.uuid4())
     raw_text = ticket.Descripcion_Caso
-    clean = clean_text(raw_text)
+    # Sensibilidad (PII)
+    clean = sensibilidad_svc.anonimizar_texto(clean_text(raw_text))
     signals = text_signals(clean)
 
     # -------------------------------------------------------------
@@ -77,7 +78,7 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
         cliente_id=id_cliente,
         account_manager_id=id_account_manager,
         titulo=ticket.titulo,
-        descripcion=raw_text,
+        descripcion=clean,
         fecha_creacion=datetime.now(timezone.utc),
         recomendacion_agente= None,
         tipo_mantenimiento="",
@@ -140,14 +141,9 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
         }
 
     # -------------------------------------------------------------
-    # 5) Sensibilidad (PII)
-    # -------------------------------------------------------------
-    clean = sensibilidad_svc.anonimizar_texto(clean)
-
-    # -------------------------------------------------------------
     # 6) Clasificación mantenimiento
     # -------------------------------------------------------------
-    classification, mant_reasons = mant_svc.classify_mantenimiento(clean)
+    classification = mant_svc.classify_mantenimiento(clean)
 
     # -------------------------------------------------------------
     # 7) Churn
@@ -158,8 +154,19 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
         "Volumen_Tickets_Ult_Mes": await get_volumen_tickets_ultimo_mes(db, cliente.id),
         "Segmento_Cliente": cliente.segmento
     }
-    churn_result = churn_svc.predict_churn_score(churn_payload)
-
+    try:
+        churn_result = churn_svc.predict_churn_score(churn_payload)
+        
+        # Verificar si hay error en el modelo
+        if "error" in churn_result:
+            print(f"⚠️ Modelo de churn no disponible: {churn_result['error']}")
+            churn_score = 50  # Score neutro por defecto
+        else:
+            churn_score = churn_result["score"]
+            
+    except Exception as e:
+        print(f"❌ Error al predecir churn: {e}")
+        churn_score = 50
     
 
     # -------------------------------------------------------------
@@ -186,9 +193,9 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
     # 9) Actualizar estado actual
     # -------------------------------------------------------------
     nuevo_ticket.estado_actual = "Abierto"
-    nuevo_ticket.recomendacion_agente =  rule_engine(churn_result["score"], sentiment_val)
+    nuevo_ticket.recomendacion_agente =  rule_engine(churn_score, sentiment_val)
     nuevo_ticket.tipo_mantenimiento = classification["class"]
-    nuevo_ticket.riego_churn = churn_result["score"]
+    nuevo_ticket.riego_churn = churn_score
     await db.commit()
 
     # enviar aviso por correo
@@ -203,8 +210,8 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
         "Cliente": cliente,
         "Account_Manager": manager_random,
         "Tipo_Mantenimiento": classification["class"],
-        "Riesgo_Churn_Real": churn_result["score"],
-        "Recomendacion": rule_engine(churn_result["score"], sentiment_val),
+        "Riesgo_Churn_Real": churn_score,
+        "Recomendacion": rule_engine(churn_score, sentiment_val),
         "Descripcion_Caso": clean,
         "Titulo": nuevo_ticket.titulo,
         "Estado_Actual": nuevo_ticket.estado_actual,
@@ -275,9 +282,12 @@ async def actualizar_estado_ticket(
 
     # Buscar ticket
     result = await db.execute(
-        select(Ticket).where(Ticket.id == ticket_id)
+        select(Ticket)
+        .options(selectinload(Ticket.cliente))
+        .where(Ticket.id == ticket_id)
     )
     ticket = result.scalars().first()
+
 
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket no encontrado")
@@ -348,11 +358,27 @@ def enviar_correo (to: str, ticker_id: str, estado_actual: str, comentario: str)
             to=to,
             subject=f"Actualización de Ticket #{ticker_id}",
             mensaje=f"""
-                    Hola, tu ticket ha cambiado de estado.
+                Estimado usuario,
 
-                    Nuevo estado: {estado_actual}
-                    Comentario: {comentario}
+                Le informamos que su ticket #{ticker_id} ha sido actualizado.
 
-                    Gracias por comunicarte con soporte. No responder este correo
+                ┌─────────────────────────────────────┐
+                │ Estado Actual: {estado_actual}      │
+                └─────────────────────────────────────┘
+
+                Comentario del equipo:
+                » {comentario}
+
+                ──────────────────────────────────────
+
+                Si tiene alguna pregunta, no dude en contactarnos 
+                a través de nuestros canales oficiales.
+
+                Atentamente,
+                Equipo de Soporte Técnico
+
+                ──────────────────────────────────────
+                Este mensaje es generado automáticamente.
+                Por favor no responda a este correo.
                     """
             )
