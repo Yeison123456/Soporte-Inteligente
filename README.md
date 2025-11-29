@@ -7,7 +7,7 @@ Construido con <strong>FastAPI</strong>, <strong>SQLAlchemy Async</strong>, <str
 
 <hr>
 
-<h2>🚀 Tecnologías principales</h2>
+<h2> Tecnologías principales</h2>
 <ul>
     <li>Python 3.13</li>
     <li>FastAPI</li>
@@ -18,7 +18,7 @@ Construido con <strong>FastAPI</strong>, <strong>SQLAlchemy Async</strong>, <str
     <li>Modelos IA (Clasificación + Churn)</li>
 </ul>
 
-<h2>🎯 Funcionalidades principales</h2>
+<h2> Funcionalidades principales</h2>
     <ul>
         <li>Crear tickets</li>
         <li>Listar todos los tickets</li>
@@ -30,10 +30,8 @@ Construido con <strong>FastAPI</strong>, <strong>SQLAlchemy Async</strong>, <str
         <li>Autenticación con roles</li>
     </ul>
 
-<h2>🧠 IA incluida</h2>
-
+<h2> IA incluida</h2>
     <h3> Clasificación de ticket</h3>
     <p>Correctivo / Evolutivo</p>
-
     <h3> Predictor de CHURN</h3>
     <p>Devuelve un score entre 0 y 100.</p>
