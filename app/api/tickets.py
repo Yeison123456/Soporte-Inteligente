@@ -127,13 +127,15 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
 
         return {
             "ID_Ticket": ticket_id,
-            "Tipo_Mantenimiento": None,
-            "Tipo_Mantenimiento_Prob": None,
-            "Es_Phishing_Real": "Si",
-            "Anonimo_Requerido": "No",
-            "PII_Detectado": [],
-            "Riesgo_Churn_Real": 0,
+            "Cliente": cliente,
+            "Account_Manager": manager_random,
+            "Tipo_Mantenimiento": "None",
+            "Riesgo_Churn_Real": 0,            
+            "Descripcion_Caso": clean,
+            "Titulo": nuevo_ticket.titulo,
+            "Estado_Actual": nuevo_ticket.estado_actual,
             "Recomendacion": {"level": "CRITICO", "message": "Phishing detectado"},
+            "Fecha_Creacion": nuevo_ticket.fecha_creacion,
             "Estados_Historial": await obtener_historial(ticket_id, db)
         }
 
@@ -145,9 +147,7 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
     # -------------------------------------------------------------
     # 6) Clasificación mantenimiento
     # -------------------------------------------------------------
-    classification, mant_reasons = mant_svc.predict_mantenimiento(clean)
-
-
+    classification, mant_reasons = mant_svc.classify_mantenimiento(clean)
 
     # -------------------------------------------------------------
     # 7) Churn
