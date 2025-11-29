@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 from tensorflow.keras import models, layers
+from tensorflow.keras.callbacks import EarlyStopping
 import joblib
 import os
 
@@ -22,7 +23,7 @@ df = pd.read_csv(DATASET_PATH)
 print(f"✅ Dataset cargado: {len(df)} registros")
 
 # 2. Procesar texto (TF-IDF)
-vectorizer = TfidfVectorizer(max_features=500)
+vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1,2))
 X_text = vectorizer.fit_transform(df["Descripcion_Caso"]).toarray()
 
 # 3. One-hot segmento
@@ -36,16 +37,17 @@ X_numeric = df[["Antiguedad_Contrato", "Volumen_Tickets_Ult_Mes"]].values
 X = np.hstack([X_text, X_segmento, X_numeric])
 y = df["Churn_Score"].values / 100  # normalizado 0-1
 
-# 6. Entrenar con TODOS los datos
-X_train = X  # Usar todo
-y_train = y  # Usar todo
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.15, random_state=42
+)
+
+es = EarlyStopping(patience=5, restore_best_weights=True)
 
 # 7. Red neuronal
 model = models.Sequential([
-    layers.Dense(128, activation='relu', input_shape=(X.shape[1],)),
-    layers.Dropout(0.3),
-    layers.Dense(64, activation='relu'),
-    layers.Dropout(0.2),
+    layers.Dense(64, activation='relu', input_shape=(X.shape[1],)),
+    layers.Dense(32, activation='relu'),
     layers.Dense(1, activation='sigmoid')
 ])
 

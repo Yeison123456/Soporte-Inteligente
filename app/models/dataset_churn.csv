@@ -14,29 +14,29 @@ Descripcion_Caso,Antiguedad_Contrato,Volumen_Tickets_Ult_Mes,Segmento_Cliente,Ch
 "Consulta sobre mejores prácticas para optimizar el rendimiento",18,4,B,25
 "Sistema completamente caído, nadie puede trabajar. URGENTE",1,25,C,99
 "Propuesta de mejora: añadir filtros avanzados en búsqueda",32,2,A,12
-"El módulo de facturación genera errores al procesar pagos recurrentes",5,12,B,72
+"El módulo de facturación genera errores al procesar pagos recurrentes",5,12,B,82
 "Excelente soporte, ahora necesitamos configurar usuarios adicionales",24,3,A,18
 "La integración con el API falla constantemente desde la actualización",3,17,C,94
 "Me interesa conocer las nuevas funcionalidades del plan enterprise",30,1,A,10
 "Error al sincronizar datos entre módulos, información inconsistente",6,11,B,68
 "Fallo grave en autenticación, usuarios reportan que no pueden entrar",2,20,C,95
 "Solicitud para personalizar reportes según nuestras necesidades",26,3,A,16
-"El sistema de notificaciones no funciona desde ayer",7,9,B,61
+"El sistema de notificaciones no funciona desde ayer",7,9,B,77
 "Queremos ampliar licencias y añadir más funcionalidades",38,2,A,7
 "Problemas críticos con la pasarela de pagos, clientes frustrados",3,19,C,92
 "Consulta técnica sobre configuración de permisos avanzados",15,5,B,32
-"La app móvil crashea al cargar imágenes grandes",8,8,B,58
+"La app móvil crashea al cargar imágenes grandes",8,8,B,99
 "Error 404 en varias secciones críticas del portal",4,13,C,87
 "Propuesta para implementar dashboard personalizado",34,2,A,11
 "No podemos generar reportes mensuales, necesitamos esto YA",3,14,C,90
 "Interesados en demo de nuevas funcionalidades de analytics",28,1,A,14
-"El módulo de inventarios no actualiza stock en tiempo real",9,7,B,55
-"Sistema lento desde hace días, afecta productividad",6,10,B,65
+"El módulo de inventarios no actualiza stock en tiempo real",9,7,B,80
+"Sistema lento desde hace días, afecta productividad",6,10,B,90
 "Falla crítica en backup automático, riesgo de pérdida de datos",2,18,C,96
 "Solicitud de capacitación para equipo en nuevas features",22,3,A,19
 "La importación de datos CSV genera errores constantemente",7,9,B,62
 "Excelente servicio, queremos renovar contrato anticipadamente",40,1,A,6
-"Bug al eliminar registros, algunos quedan duplicados",8,8,B,56
+"Bug al eliminar registros, algunos quedan duplicados",8,8,B,70
 "No funciona el reset de contraseña, usuarios bloqueados",4,15,C,88
 "Consulta para integrar sistema de tickets con nuestro CRM",20,4,A,22
 "Error al procesar archivos XML en importación masiva",10,6,B,50
@@ -69,38 +69,138 @@ Descripcion_Caso,Antiguedad_Contrato,Volumen_Tickets_Ult_Mes,Segmento_Cliente,Ch
 "El gráfico de dashboard muestra datos incorrectos",10,6,B,51
 "No puedo recuperar mi contraseña, el email no llega",5,13,C,81
 "Interesados en capacitación avanzada para administradores",26,2,A,17
-"La función de autocompletado no sugiere resultados",12,4,B,40
-"Error al procesar pagos internacionales",8,8,B,60
+"La función de autocompletado no sugiere resultados",12,4,B,65
+"Error al procesar pagos internacionales",8,8,B,99
 "Fallo grave: los datos de clientes no se guardan correctamente",2,19,C,95
 "Consulta sobre migración de datos desde sistema legacy",22,3,A,20
-"El módulo de reportes no genera PDFs correctamente",11,5,B,47
-"La plataforma no responde en horarios pico",6,12,B,69
+"El módulo de reportes no genera PDFs correctamente",11,5,B,80
+"La plataforma no responde en horarios pico",6,12,B,95
 "Problema urgente: emails de confirmación no se envían",4,14,C,87
 "Propuesta para implementar autenticación de dos factores",30,2,A,13
-"Error en cálculo de descuentos promocionales",9,7,B,56
-"El widget de chat en vivo no aparece en la página",10,6,B,49
+"Error en cálculo de descuentos promocionales",9,7,B,89
+"El widget de chat en vivo no aparece en la página",10,6,B,70
 "Sistema caído en fin de semana crítico de ventas",1,23,C,98
 "Solicitud de análisis de uso para optimizar licencias",34,2,A,10
-"La sincronización con calendario falla constantemente",8,8,B,58
-"No se pueden adjuntar archivos en tickets de soporte",7,10,B,64
+"La sincronización con calendario falla constantemente",8,8,B,87
+"No se pueden adjuntar archivos en tickets de soporte",7,10,B,78
 "Error crítico en proceso de onboarding de nuevos clientes",3,16,C,92
 "Queremos feedback sobre nuestra implementación actual",25,3,A,16
-"El buscador interno no indexa documentos nuevos",11,5,B,44
-"Problemas de rendimiento en módulo de analytics",9,7,B,57
+"El buscador interno no indexa documentos nuevos",11,5,B,86
+"Problemas de rendimiento en módulo de analytics",9,7,B,87
 "Falla urgente en proceso de autorización de pagos",2,20,C,96
 "Consulta sobre mejores prácticas de seguridad",23,3,A,19
-"Error al cargar imágenes de productos en catálogo",10,6,B,53
-"La función de recordatorios no envía notificaciones",12,5,B,41
+"Error al cargar imágenes de productos en catálogo",10,6,B,98
+"La función de recordatorios no envía notificaciones",12,5,B,85
 "Bug grave: duplicación de transacciones en sistema",4,15,C,88
 "Interesados en demo personalizada para equipo ejecutivo",31,2,A,12
-"El módulo de inventario no resta stock automáticamente",8,8,B,59
+"El módulo de inventario no resta stock automáticamente",8,8,B,85
 "La aplicación consume demasiada memoria y se congela",7,9,B,62
 "Sistema no disponible durante mantenimiento no programado",3,17,C,93
 "Solicitud de reporte customizado para junta directiva",27,2,A,15
-"Error en configuración de roles y permisos de usuarios",9,7,B,55
-"No se pueden exportar datos a formato JSON",11,5,B,45
+"Error en configuración de roles y permisos de usuarios",9,7,B,80
+"No se pueden exportar datos a formato JSON",11,5,B,87
 "Problema crítico: pérdida de sesión cada 5 minutos",5,13,C,84
 "Queremos renovar y ampliar servicios contratados",36,1,A,8
-"El dashboard tarda más de 30 segundos en cargar",10,6,B,54
-"La función de favoritos no guarda preferencias",13,4,B,37
+"El dashboard tarda más de 30 segundos en cargar",10,6,B,70
+"La función de favoritos no guarda preferencias",13,4,B,67
 "Error urgente en gateway de pagos, rechaza tarjetas válidas",3,18,C,94
+"Agregar integración externa	,47	,74,	C	,43
+"Interfaz no responde	,24,	108,	C	,80
+"Optimizar flujo de trabajo	,27	,12,	B	,50
+"Interfaz no responde	,57	,51,	B	,70
+"Incluir métricas avanzadas,	9	,96,	A	,40
+"Error al iniciar sesión	,43	,72,	A	,69
+"Error al iniciar sesión,	9	,60,	C	,80
+"La app se cierra inesperadamente	,38	,119,	C	,94
+"Mejorar velocidad del sistema	,43	,65,	B	,60
+"Problema con la base de datos	,17	,95,	B	,90
+"Falla al exportar reportes	,42	,49,	A	,87
+"Problema con la base de datos	,34	,27,	A	,92
+"Agregar nueva funcionalidad	,53	,31,	C	,40
+"Problema con la base de datos	,26	,35,	C	,96
+"Falla al exportar reportes	,53	,18,	B	,95
+"Optimizar flujo de trabajo,	8	,10,	B	,60
+"Agregar nueva funcionalidad	,55	,10,	A	,20
+"Agregar integración externa	,54	,83,	A	,10
+"Optimizar flujo de trabajo	,39	,55,	C	,34
+"Incluir métricas avanzadas	,56	,53,	C	,25
+"La app se cierra inesperadamente	,24	,31,	B	,99
+"Optimizar flujo de trabajo	,26	,61,	B	,45
+"Agregar integración externa	,28	,47,	A	,22
+"La app se cierra inesperadamente,	6	,72,	A	,99
+"Error al iniciar sesión	,47	,72,	C	,82
+"Agregar integración externa	,15	,37,	C	,66
+"Agregar nueva funcionalidad,	25,	9,	B	,30
+"Problema con la base de datos,	1	,60,	B	,99
+"Problema con la base de datos	,38	,77,	A	,80
+"Agregar integración externa	,17	,102,	A	,53
+"Optimizar flujo de trabajo	,33	,96,	C	,46
+"Agregar nueva funcionalidad	,37	,20,	C	,50
+"Incluir métricas avanzadas	,18	,58,	B	,65
+"La app se cierra inesperadamente	,49	,16,	B	,77
+"La app se cierra inesperadamente,	26,	8,	A	,86
+"Interfaz no responde,	41,	5,	A	,89
+"Falla al exportar reportes	,22	,39,	C	,76
+"Agregar integración externa	,21	,105,	C	,56
+"La app se cierra inesperadamente	,53	,56,	B	,79
+"Agregar nueva funcionalidad,	9	,27,	B	,60
+"Falla al exportar reportes,	9	,83,	C	,90
+"Agregar integración externa	,22	,76,	C	,35
+"Falla al exportar reportes	,38	,98,	B	,78
+"Mejorar velocidad del sistema	,15	,33,	B	,54
+"Falla al exportar reportes,	34,	3,	A	,76
+"Error al iniciar sesión	,13	,66,	A	,90
+"Mejorar velocidad del sistema	,59	,32,	C	,67
+"Agregar integración externa	,42	,57,	C	,42
+"Mejorar velocidad del sistema	,38	,40,	C	,45
+"Optimizar flujo de trabajo,	10	,109,	C	,67
+"Agregar nueva funcionalidad	,51	,44,	B	,40
+"Incluir métricas avanzadas	,36	,59,	B	,61
+"Problema con la base de datos,	38,	8,	A	,78
+"Optimizar flujo de trabajo,	7	,73,	A	,67
+"Falla al exportar reportes	,20	,68,	C	,78
+"Falla al exportar reportes,	8	,81,	B	,96
+"Mejorar velocidad del sistema	,44	,16,	B	,56
+"Incluir métricas avanzadas	,4	,115,	A	,78
+"Agregar nueva funcionalidad,	4	,59,	A	,56
+"La app se cierra inesperadamente,	41,	9,	C	,80
+"Interfaz no responde	,56	,118,	C	,78
+"Mejorar velocidad del sistema	,49	,103,	B	,67
+"Incluir métricas avanzadas	,35	,27,	B	,58
+"Agregar integración externa	,13	,81,	A	,70
+"Problema con la base de datos	,35	,42,	A	,79
+"Falla al exportar reportes	,34	,85,	C	,86
+"Agregar nueva funcionalidad,	1	,88,	C	,76
+"Optimizar flujo de trabajo	,59	,45,	B	,45
+"Optimizar flujo de trabajo	,42	,52,	B	,50
+"Optimizar flujo de trabajo	,2	,106,	A	,56
+"La app se cierra inesperadamente	,59	,15,	A	,87
+"Interfaz no responde	,17	,38,	C	,78
+"Agregar integración externa	,25	,118,	B	,67
+"Problema con la base de datos	,22	,98,	B	,78
+"Error al iniciar sesión,	53,	0,	A	,80
+"Agregar nueva funcionalidad	,14	,58,	A	,54
+"Agregar nueva funcionalidad	,22	,13,	C	,45
+"Incluir métricas avanzadas	,60	,102,	C	,56
+"Interfaz no responde	,16	,110,	B	,76
+"Agregar integración externa	,53	,73,	B	,67
+"Interfaz no responde	,40	,16,	A	,70
+"Incluir métricas avanzadas	,11	,101,	A	,69
+"La app se cierra inesperadamente	,41	,90,	C	,87
+"Mejorar velocidad del sistema	,32	,55,	B	,54
+"Agregar nueva funcionalidad	,53	,42,	B	,50
+"Interfaz no responde	,60	,34,	A	,68
+"Agregar nueva funcionalidad	,20	,15,	A	,46
+"Agregar integración externa,	2	,97,	C	,56
+"La app se cierra inesperadamente	,24	,119,	C	,79
+"Problema con la base de datos,	1	,54,	B	,90
+"Problema con la base de datos	,54	,19,	B	,92
+"Mejorar velocidad del sistema	,44	,42,	A	,56
+"Error al iniciar sesión	,29	,18,	A	,68
+"Error al iniciar sesión	,54	,14,	C	,70
+"Interfaz no responde	,27	,51,	C	,80
+"Agregar nueva funcionalidad	,27	,113,	B	,30
+"Problema con la base de datos	,11	,85,	B	,91
+"Agregar integración externa	,34	,52,	A	,40
+"Mejorar velocidad del sistema	,51	,113,	A	,67
+"Optimizar flujo de trabajo	,50	,115,	C	,92

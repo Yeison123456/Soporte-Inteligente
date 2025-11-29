@@ -106,7 +106,7 @@ async def process_ticket(ticket: TicketIn, db: AsyncSession = Depends(get_db)):
     # -------------------------------------------------------------
     # 4) PHISHING
     # -------------------------------------------------------------
-    is_phish, ph_reasons = phishing_svc.detect_phishing(clean)
+    is_phish, reasons = phishing_svc.detect_phishing(clean)
     if is_phish:
 
         # Guardar cambio de estado a “Aislado”
@@ -358,27 +358,27 @@ def enviar_correo (to: str, ticker_id: str, estado_actual: str, comentario: str)
             to=to,
             subject=f"Actualización de Ticket #{ticker_id}",
             mensaje=f"""
-                Estimado usuario,
+                <p>Estimado usuario,</p>
 
-                Le informamos que su ticket #{ticker_id} ha sido actualizado.
+                <p>Le informamos que su ticket <strong>#{ticker_id}</strong> ha sido actualizado.</p>
 
-                ┌─────────────────────────────────────┐
-                │ Estado Actual: {estado_actual}      │
-                └─────────────────────────────────────┘
+                <br><br>
 
-                Comentario del equipo:
-                » {comentario}
+                <p><strong>Estado Actual:</strong> {estado_actual}</p>
 
-                ──────────────────────────────────────
+                <br>
 
-                Si tiene alguna pregunta, no dude en contactarnos 
-                a través de nuestros canales oficiales.
+                <p><strong>Comentario del equipo:</strong><br>
+                {comentario}</p>
 
-                Atentamente,
-                Equipo de Soporte Técnico
+                <br><br>
 
-                ──────────────────────────────────────
-                Este mensaje es generado automáticamente.
-                Por favor no responda a este correo.
-                    """
+                <p>Atentamente,<br>
+                <strong>Equipo de Soporte Técnico</strong></p>
+
+                <hr>
+                <p style="color:#666;font-size:12px;">
+                Este mensaje ha sido generado automáticamente. Por favor no responda a este correo.
+                </p>
+                """
             )

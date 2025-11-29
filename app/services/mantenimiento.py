@@ -48,7 +48,7 @@ texts = [
     "la aplicación se cae constantemente",
     "error 500 en el servidor",
     "no puedo acceder al sistema",
-    "la página no carga",
+    "la página no carga", #10
     "el login falla",
     "problema urgente con la base de datos",
     "se perdieron datos importantes",
@@ -58,7 +58,7 @@ texts = [
     "no se pueden procesar pagos",
     "fallo crítico en producción",
     "bug en el módulo de facturación",
-    "la app se congela",
+    "la app se congela", #20
     "el sistema está muy lento",
     "timeout en las consultas",
     "la carga es demasiado lenta",
@@ -68,7 +68,7 @@ texts = [
     "lentitud extrema en reportes",
     "el dashboard tarda mucho",
     "problemas de velocidad",
-    "consumo excesivo de memoria",
+    "consumo excesivo de memoria", #30
     "los reportes no se generan correctamente",
     "el cálculo de impuestos está mal",
     "error en la sincronización de datos",
@@ -78,7 +78,7 @@ texts = [
     "error al exportar archivos",
     "los filtros no funcionan",
     "bug en la búsqueda",
-    "error al eliminar registros",
+    "error al eliminar registros", #40
     "no se guardan los cambios",
     "problema con los permisos",
     "falla la integración con el API",
@@ -88,7 +88,7 @@ texts = [
     "error al procesar archivos CSV",
     "problema con el checkout",
     "falla el sistema de pagos",
-    "bug en el carrito de compras",
+    "bug en el carrito de compras", #50
     "no hay conexión con la base de datos",
     "error de red",
     "timeout en la conexión",
@@ -98,7 +98,7 @@ texts = [
     "falla la sincronización",
     "no se puede establecer conexión",
     "problema de conectividad",
-    "error de comunicación entre servicios",
+    "error de comunicación entre servicios", #60
     "la interfaz no se muestra bien",
     "problema de visualización",
     "error en el diseño responsive",
@@ -108,37 +108,40 @@ texts = [
     "error al renderizar componentes",
     "la página se ve rota",
     "bug visual en el dashboard",
-    "problema con el layout",
-    "se requiere nueva funcionalidad",
-    "deseamos agregar una mejora",
-    "quiero añadir una feature nueva",
-    "implementar nuevo módulo",
-    "agregar integración con API",
-    "desarrollar dashboard de reportes",
-    "necesitamos nueva función de exportación",
-    "solicitud de módulo de analytics",
-    "queremos añadir chat en vivo",
-    "implementar sistema de notificaciones push",
-    "agregar funcionalidad de búsqueda avanzada",
-    "desarrollar app móvil",
-    "crear nuevo módulo de inventarios",
-    "implementar autenticación de dos factores",
-    "agregar soporte para múltiples idiomas",
-    "desarrollar sistema de reportes personalizados",
-    "implementar dashboard ejecutivo",
-    "añadir integración con redes sociales",
-    "crear módulo de facturación electrónica",
-    "desarrollar sistema de tickets",
-    "mejorar el rendimiento del sistema",
-    "optimizar la velocidad de carga",
-    "actualizar el diseño de la interfaz",
-    "mejorar la experiencia de usuario",
-    "optimizar las consultas a base de datos",
-    "mejorar el sistema de búsqueda",
-    "actualizar la documentación",
-    "mejorar la seguridad del sistema",
-    "optimizar el código legacy",
-    "actualizar las librerías del proyecto",
+    "problema con el layout", #70
+    "falta de funcionalidad",
+    "El botón de pago tiene un fallo crítico desde ayer",
+    "El sistema no funciona correctamente",
+    "El sistema no está funcionando correctamente",
+    "¡Necesito una solución URGENTE!",
+    "bug en la página de login",
+    "error al procesar el formulario",
+    "falta de seguridad",
+    "no me llegan las notificaciones",
+    "el sistema falla al cargar datos", #80
+    "el sistema no carga los datos correctamente",
+    "falla en la carga de datos",
+    "error al cargar datos",
+    "bug en la pantalla de inicio",
+    "problema con la interfaz",
+    "falla en la interfaz",
+    "error en la interfaz",
+    "bug en el menú principal",
+    "problema con los botones",
+    "falla en los botones", #90
+    "error en los botones",
+    "bug en la barra de navegación",
+    "problema con la barra de navegación",
+    "falla en la barra de navegación",
+    "error en la barra de navegación",
+    "bug en la barra de tareas",
+    "problema con la barra de tareas",
+    "necesito ayuda con la barra de tareas",
+    "ayuda con la barra de tareas",
+    "problema con la barra de tareas", #100
+
+
+    
     "mejorar el flujo de checkout",
     "optimizar el proceso de registro",
     "actualizar el sistema de permisos",
@@ -148,7 +151,7 @@ texts = [
     "mejorar los tiempos de respuesta",
     "optimizar el uso de recursos",
     "actualizar el diseño responsive",
-    "mejorar la accesibilidad",
+    "mejorar la accesibilidad", #110
     "ampliar funcionalidades del CRM",
     "extender el módulo de ventas",
     "expandir capacidad del sistema",
@@ -158,7 +161,7 @@ texts = [
     "añadir más filtros de búsqueda",
     "desarrollar nuevas integraciones",
     "crear versión enterprise",
-    "implementar modo offline",
+    "implementar modo offline", #120
     "agregar exportación a más formatos",
     "desarrollar API pública",
     "implementar webhooks",
@@ -168,7 +171,7 @@ texts = [
     "agregar analytics predictivo",
     "desarrollar módulo de BI",
     "implementar automatizaciones",
-    "añadir inteligencia artificial",
+    "añadir inteligencia artificial", #130
     "personalizar el logo y colores",
     "customizar reportes corporativos",
     "adaptar interfaz a marca",
@@ -178,7 +181,7 @@ texts = [
     "customizar dashboard principal",
     "adaptar nomenclaturas",
     "configurar reglas de negocio",
-    "personalizar permisos por rol",
+    "personalizar permisos por rol", #140
     "ajustar plantillas de documentos",
     "customizar notificaciones",
     "adaptar flujo de aprobaciones",
@@ -188,37 +191,37 @@ texts = [
     "solicitud de training avanzado",
     "requerimos documentación técnica",
     "crear guías de usuario",
-    "desarrollar tutoriales interactivos",
+    "desarrollar tutoriales interactivos", #150
     "implementar sistema de ayuda contextual",
     "agregar tooltips explicativos",
     "crear videos demostrativos",
     "desarrollar centro de ayuda",
     "implementar onboarding interactivo",
-    "error al validar formularios",
-    "bug en la paginación",
-    "problema con las sesiones",
-    "falla el autocompletado",
-    "error en el drag and drop",
-    "bug con las fechas",
-    "problema al subir archivos",
-    "error en el calendario",
-    "falla la validación de campos",
-    "bug en el selector de color",
-    "problema con los checkboxes",
-    "error al ordenar columnas",
-    "falla el modal de confirmación",
-    "bug en el menú desplegable",
-    "problema con los tooltips",
-    "error en las notificaciones toast",
-    "falla el infinite scroll",
-    "bug en el lazy loading",
-    "problema con el cache",
-    "error en el local storage",
+    "agregar FAQ dinámicas",
+    "mejorar la experiencia de usuario",
+    "optimizar las consultas a base de datos",
+    "mejorar el sistema de búsqueda",
+    "actualizar la documentación", #160
+    "mejorar la seguridad del sistema",
+    "implementar integración con CRM",
+    "agregar funcionalidad de búsqueda avanzada",
+    "desarrollar app móvil",
+    "crear nuevo módulo de inventarios",
+    "implementar autenticación de dos factores",
+    "agregar soporte para múltiples idiomas",
+    "desarrollar sistema de reportes personalizados",
+    "implementar dashboard ejecutivo",
+    "añadir integración con redes sociales", #170
+    "crear módulo de facturación electrónica",
+    "desarrollar sistema de tickets",
+    "mejorar el rendimiento del sistema",
+    "optimizar la velocidad de carga",
+    "actualizar el diseño de la interfaz",
     "implementar sistema de comentarios",
     "agregar versionamiento de documentos",
     "desarrollar módulo de colaboración",
     "implementar firma digital",
-    "agregar geolocalización",
+    "agregar geolocalización", #180
     "desarrollar sistema de reservas",
     "implementar calendario compartido",
     "agregar sistema de calificaciones",
@@ -228,12 +231,17 @@ texts = [
     "desarrollar sistema de referidos",
     "implementar programa de lealtad",
     "agregar marketplace interno",
-    "desarrollar sistema de subastas",
-    "implementar chat grupal",
-    "agregar videollamadas",
-    "desarrollar pizarra colaborativa",
-    "implementar gestión de proyectos",
-    "agregar timesheet automático"
+    "excelente trabajo, ahora queremos agregar reportes", #190
+    "muy buen servicio, necesitamos nueva funcionalidad",
+    "funciona perfecto, deseamos implementar exportación",
+    "todo bien, quisiéramos añadir módulo de analytics",
+    "gran trabajo, ahora requerimos integración con SAP",
+    "servicio impecable, solicito nueva feature de búsqueda",
+    "última actualización excelente, agregar calendario",
+    "muy satisfechos, necesitamos ampliar capacidades",
+    "perfecto funcionamiento, queremos nueva sección",
+    "todo ok, requerimos implementar notificaciones push",
+    "mejorar la seguridad del sistema" #200
 ]
 
 labels = [
@@ -265,10 +273,11 @@ labels = [
 
 # Vectorización con mejores parámetros
 vectorizer = TfidfVectorizer(
-    max_features=100,  # 100 features es suficiente para este vocabulario
+    max_features=5000,  # 5000 features es suficiente para este vocabulario
     ngram_range=(1, 2),  # Unigramas y bigramas
     lowercase=True,
-    strip_accents='unicode'
+    strip_accents='unicode',
+    min_df=1,  # Aparece en al menos 1 documento
 )
 X = vectorizer.fit_transform(texts).toarray()
 y = np.array(labels)
@@ -285,11 +294,9 @@ print(f"   Features: {X.shape[1]}")
 
 # Modelo MLP optimizado para 200 ejemplos
 model = models.Sequential([
-    layers.Dense(32, activation='relu', input_shape=(X.shape[1],)),
-    layers.Dropout(0.3),
-    layers.Dense(16, activation='relu'),
-    layers.Dropout(0.2),
-    layers.Dense(1, activation='sigmoid')
+    layers.Dense(16, activation='relu', input_shape=(X.shape[1],)), 
+    layers.Dropout(0.4),                                            
+    layers.Dense(1, activation='sigmoid')                             
 ])
 
 model.compile(
@@ -339,3 +346,16 @@ def classify_mantenimiento(text: str):
         "probability": float(pred),
         "confidence": float(confidence)
     }
+
+
+# Después de entrenar
+test_cases = [
+    "Excelente servicio, la última mejora funcionó muy bien. Quisiéramos añadir una nueva feature de reporte en la sección A.",
+    "El botón de pago tiene un fallo crítico desde ayer. ¡Necesito una solución URGENTE!"
+]
+
+for text in test_cases:
+    result = classify_mantenimiento(text)
+    print(f"\n📝 Texto: {text[:60]}...")
+    print(f"🏷️  Clasificación: {result['class']}")
+    print(f"📊 Confianza: {result['confidence']:.2%}")
